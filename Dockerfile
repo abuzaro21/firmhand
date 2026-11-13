@@ -17,5 +17,5 @@ COPY --from=build /app/public ./public
 USER node
 EXPOSE 3000
 # Storage: DATABASE_URL=postgres://... survives restarts and redeploys. Without it, FIRMHAND uses a SQLite file that
-# lasts only as long as the container. Behind one reverse proxy (Render), set FIRMHAND_TRUST_PROXY_HOPS=1.
+# lasts only as long as the container. Behind Render, set FIRMHAND_TRUST_PROXY_HOPS=3 (its edge adds the client plus two proxy hops).
 CMD ["node", "--disable-warning=ExperimentalWarning", "src/main.ts"]

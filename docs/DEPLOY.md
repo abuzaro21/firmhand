@@ -20,7 +20,7 @@ The image runs as the unprivileged `node` user. Its only runtime dependency is `
 
 | Resource | Plan | Notes |
 |---|---|---|
-| `firmhand` web service (Docker) | free | `autoDeploy: false`, health check `/api/health`, `FIRMHAND_TRUST_PROXY_HOPS=1` |
+| `firmhand` web service (Docker) | free | `autoDeploy: false`, health check `/api/health`, `FIRMHAND_TRUST_PROXY_HOPS=3` |
 | `firmhand-db` PostgreSQL 16 | free | `ipAllowList: []`, so it is reachable only from Render services |
 
 No paid resources, disks, workers or custom domains are declared.
@@ -42,7 +42,7 @@ No paid resources, disks, workers or custom domains are declared.
 | `PORT` | 3000 | listen port |
 | `DATABASE_URL` | none | PostgreSQL URL. If unset, SQLite at `FIRMHAND_DB` is used |
 | `FIRMHAND_DB` | `data/firmhand.db` | SQLite file |
-| `FIRMHAND_TRUST_PROXY_HOPS` | 0 | how many reverse proxies to trust for the client IP in `X-Forwarded-For` (Render: 1) |
+| `FIRMHAND_TRUST_PROXY_HOPS` | 0 | how many reverse proxies to trust for the client IP in `X-Forwarded-For` (Render: 3; the edge adds the client plus two proxy hops) |
 | `FIRMHAND_MAX_COMPANIES` | 400 | live companies across all visitors |
 | `FIRMHAND_COMPANIES_PER_MINUTE` | 10 | new companies per client address per minute |
 | `FIRMHAND_PREWARM` | on | set to `0` to skip precomputing the comparison runs at start |

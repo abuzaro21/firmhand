@@ -7,3 +7,4 @@ film/out/
 *.log
 .env
 film/.venv/
+.live-session.json

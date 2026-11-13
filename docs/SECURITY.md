@@ -22,7 +22,7 @@ FIRMHAND is a public demo on a free host. The aims are that one visitor cannot a
 | Live companies, whole server | 400. Companies idle for 2 hours are deleted. At capacity, companies idle for 20 minutes are deleted first; if it is still full, new visitors get 503. |
 | Comparison runs | only the 5 published seeds × 2 scenarios, computed once and cached |
 
-The client address comes from the socket. It comes from `X-Forwarded-For` only when `FIRMHAND_TRUST_PROXY_HOPS` is set, which is 1 on Render, and then the address is taken that many hops from the right, so a client cannot spoof it.
+The client address comes from the socket. It comes from `X-Forwarded-For` only when `FIRMHAND_TRUST_PROXY_HOPS` is set, which is 3 on Render, and then the address is taken that many entries from the right, so a client cannot spoof it. On Render the edge appends the client address and two proxy hops. With a hop count of 1 the key was an internal proxy address that changed between requests, and the per-address limits did not hold. The live check found this and verifies the fix: rapid new sessions hit 429, and forged left-most entries do not create new buckets.
 
 ## Headers and static files
 - **Headers.** A strict CSP (`default-src 'self'`, no inline script, `frame-ancestors 'none'`), plus `nosniff`, `no-referrer`, `X-Frame-Options: DENY`, COOP/CORP same-origin, and HSTS in production.
