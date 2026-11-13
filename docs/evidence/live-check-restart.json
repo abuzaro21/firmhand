@@ -1,0 +1,33 @@
+{
+  "base": "https://firmhand-e2vl.onrender.com",
+  "mode": "persist",
+  "at": "2026-11-13T13:11:33.611Z",
+  "checks": [
+    {
+      "name": "session survives restart",
+      "ok": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "clock unchanged after restart",
+      "ok": true,
+      "detail": {
+        "before": 56,
+        "after": 56
+      }
+    },
+    {
+      "name": "state checksum unchanged after restart",
+      "ok": true,
+      "detail": {
+        "before": "80766f10d70e6a5f",
+        "after": "80766f10d70e6a5f",
+        "match": true
+      }
+    }
+  ],
+  "pass": 3,
+  "total": 3
+}

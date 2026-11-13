@@ -1,0 +1,250 @@
+{
+  "base": "https://firmhand-e2vl.onrender.com",
+  "mode": "run",
+  "at": "2026-11-13T13:11:38.974Z",
+  "checks": [
+    {
+      "name": "health over HTTPS",
+      "ok": true,
+      "detail": {
+        "status": 200,
+        "store": "postgres",
+        "ms": 180
+      }
+    },
+    {
+      "name": "durable store is PostgreSQL",
+      "ok": true,
+      "detail": {
+        "store": "postgres"
+      }
+    },
+    {
+      "name": "HSTS header",
+      "ok": true,
+      "detail": "max-age=31536000"
+    },
+    {
+      "name": "CSP and nosniff headers",
+      "ok": true,
+      "detail": {
+        "csp": "default-src 'self'; img-src 'self' data:; font-src 'self'; s"
+      }
+    },
+    {
+      "name": "plain HTTP redirects to HTTPS",
+      "ok": true,
+      "detail": {
+        "status": 301
+      }
+    },
+    {
+      "name": "cockpit UI served",
+      "ok": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "session cookie HttpOnly, Secure, SameSite=Strict",
+      "ok": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "week completes",
+      "ok": true,
+      "detail": {
+        "clock": 56
+      }
+    },
+    {
+      "name": "agents ran: decisions by all three roles",
+      "ok": true,
+      "detail": [
+        "finance:running",
+        "operations:running",
+        "sales:running"
+      ]
+    },
+    {
+      "name": "all agents running at week end",
+      "ok": true,
+      "detail": [
+        "finance:running",
+        "operations:running",
+        "sales:running"
+      ]
+    },
+    {
+      "name": "human approvals requested and executed (discount, recovery)",
+      "ok": true,
+      "detail": [
+        {
+          "id": "AP-1",
+          "kind": "discount",
+          "status": 200
+        },
+        {
+          "id": "AP-2",
+          "kind": "recover-agent",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "name": "forged hash refused",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "inventory shock: expedite purchase funded without a human",
+      "ok": true,
+      "detail": [
+        "PO-6:received",
+        "PO-3:received"
+      ]
+    },
+    {
+      "name": "Operations crash detected and resolved",
+      "ok": true,
+      "detail": {
+        "id": "INC-ops-stalled-3",
+        "status": "resolved"
+      }
+    },
+    {
+      "name": "nine reconciliation checks pass",
+      "ok": true,
+      "detail": []
+    },
+    {
+      "name": "seven days closed",
+      "ok": true,
+      "detail": 7
+    },
+    {
+      "name": "KPI drill-down returns source rows",
+      "ok": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "replay Day 3: no side effects, matches the close",
+      "ok": true,
+      "detail": {
+        "digestBefore": "141cb32b360ebba5",
+        "digestAfter": "141cb32b360ebba5",
+        "none": true
+      }
+    },
+    {
+      "name": "whole-company replay matches live state",
+      "ok": true,
+      "detail": {
+        "live": "80766f10d70e6a5f"
+      }
+    },
+    {
+      "name": "naive-baseline comparison available",
+      "ok": true,
+      "detail": {
+        "status": 200,
+        "ms": 104
+      }
+    },
+    {
+      "name": "a second visitor gets a different company",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a visitor cannot decide another company's approval",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a visitor cannot trace another company's records",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "a forged cookie gets nothing",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "new-company rate limit returns 429",
+      "ok": true,
+      "detail": {
+        "after": 9
+      }
+    },
+    {
+      "name": "forged X-Forwarded-For cannot bypass the limit",
+      "ok": true,
+      "detail": {
+        "status": 429
+      }
+    },
+    {
+      "name": "no secrets in responses",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "kpis": {
+    "clock": 56,
+    "bookedValue": 1628855,
+    "ordersBooked": 174,
+    "cancelledValue": 0,
+    "recognizedRevenue": 1354255,
+    "refundsAndCredits": 6000,
+    "netRevenue": 1348255,
+    "cogs": 545190,
+    "grossProfit": 803065,
+    "grossMarginPct": 59.6,
+    "shipping": 93600,
+    "advertising": 48000,
+    "staff": 245000,
+    "operatingCosts": 386600,
+    "netIncome": 416465,
+    "cash": 1985970,
+    "cashCollected": 1628855,
+    "customerDeposits": 274600,
+    "supplierAdvances": 363100,
+    "inventoryValue": 72195,
+    "backlogOrders": 18,
+    "backlogValue": 274600,
+    "backordered": 17,
+    "fulfilled": 156,
+    "avgFulfilHours": 2.1,
+    "brokenPromises": 0,
+    "lateVsOriginal": 2,
+    "renegotiated": 12,
+    "lateCancellations": 0,
+    "customersActive": 40,
+    "customersAtRisk": 0,
+    "customersChurned": 0,
+    "customersTotal": 40,
+    "unitsAvailable": {
+      "DRIPPER": 21,
+      "FILTERS": 80,
+      "GRINDER": 0,
+      "KETTLE": 10
+    },
+    "unitsOnHand": {
+      "DRIPPER": 21,
+      "FILTERS": 80,
+      "GRINDER": 0,
+      "KETTLE": 11
+    },
+    "pendingApprovals": 0,
+    "openIncidents": 1,
+    "unpostedForFinance": 0
+  },
+  "pass": 27,
+  "total": 27
+}

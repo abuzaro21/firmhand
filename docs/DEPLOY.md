@@ -29,7 +29,7 @@ No paid resources, disks, workers or custom domains are declared.
 1. Create a dedicated Render workspace for FIRMHAND. The CLI cannot create workspaces, so this is done in the dashboard. Do not reuse another project's workspace.
 2. In that workspace choose **New → Blueprint** and connect `abuzaro21/firmhand`. Render reads `render.yaml`.
 3. Approve the two free resources. `DATABASE_URL` is wired automatically from the database, and no secret is entered by hand.
-4. Trigger the first deploy. When `/api/health` returns `{"ok":true,...}`, run the live checks listed under G15 in [`EXECUTION_STATE.md`](EXECUTION_STATE.md).
+4. Trigger the first deploy. FIRMHAND itself was deployed this way with the Render MCP: `create_blueprint`, review the plan, then `approve_blueprint`. When `/api/health` returns `{"ok":true,...}`, run the live checks listed under G15 in [`EXECUTION_STATE.md`](EXECUTION_STATE.md).
 
 ### Free-plan behaviour to expect
 - **Sleep:** a free web service spins down after about 15 minutes without traffic. The next request wakes it, which takes up to about a minute. Companies are stored in PostgreSQL, so they survive sleep, restarts and redeploys. A company idle for 2 hours expires, and its visitor gets a new one on the next visit.

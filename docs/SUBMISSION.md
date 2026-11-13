@@ -7,8 +7,8 @@ Ready to paste. The owner submits; nothing here has been submitted automatically
 **Project:** FIRMHAND
 **Tagline:** One company. One shared truth. Many accountable hands.
 **Repository:** https://github.com/abuzaro21/firmhand
-**Live demo:** _the Render URL, once deployed (see [EXECUTION_STATE](EXECUTION_STATE.md))_
-**Film:** _the YouTube link, once the owner uploads it_ (the MP4 is also attached to the v1.0.0 release)
+**Live demo:** https://firmhand-e2vl.onrender.com (free tier: allow up to a minute for the first load)
+**Film:** _the YouTube link, once the owner uploads it_ (the MP4 is also attached to the [v1.0.0 release](https://github.com/abuzaro21/firmhand/releases/tag/v1.0.0))
 
 **What it is (short):**
 FIRMHAND is a small company, Hearthbrew Coffee Gear, run for one simulated week by three independent agents: Sales, Operations and Finance. They never call each other. They act only through one command kernel over one shared record system, which holds a double-entry ledger in integer cents, an append-only event log, and per-role task inboxes. Anything above a role's authority waits in the human COO's approval inbox. Each approval is bound by a hash to its parameters, the record versions and the policy version, and it can be used once.
@@ -61,5 +61,5 @@ Entry for the DOO Builders League.
 ## Before pressing submit (owner)
 - [ ] The live URL answers `/api/health` (wake it first; free tier sleeps).
 - [ ] The YouTube video is Unlisted and plays, and its link is pasted above.
-- [ ] The repository is public, and the v1.0.0 release has the MP4 and SRT.
+- [x] The repository is public, and the v1.0.0 release has the MP4 and SRT.
 - [ ] The DOO form is submitted. FIRMHAND is not submitted until this box is ticked; publishing the video alone is not a submission.
