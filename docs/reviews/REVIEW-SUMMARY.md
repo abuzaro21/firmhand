@@ -14,7 +14,7 @@
 | [R6](R6-fix-verification-2-codex.md) | verification of R5 | FAIL | all R5 items fixed, 2 new medium |
 | [R7](R7-fix-verification-3-codex.md) | verification of R6 | FAIL | both R6 items fixed, 2 new medium |
 | [R8](R8-release-review-codex.md) | verification of R7, and final review of the whole release tree | FAIL | both R7 items fixed; release: 2 medium, 5 low (docs, config, evidence) |
-| R9 | verification of R8 on the committed release | see [R9](R9-final-verification-codex.md) | |
+| [R9](R9-final-verification-codex.md) | verification of R8 on the committed release `9d9077c` | FAIL | all seven R8 items fixed; 1 medium, 1 low (pending items worded as done) |
 
 ## Findings, fixes and tests
 | ID | Sev | Finding | Fix | Regression test | Status |
@@ -45,18 +45,23 @@
 | R6-B | Medium | A reset whose deletion failed stranded the replacement and used up capacity | If the drop fails, the replacement is dropped and the error re-thrown | `R6: deleting the old company fails…` | verified FIXED (R7) |
 | R7-A | Medium | The hash covered the first four SKUs but the whole list was stored and advertised | `PayAds` normalises `skus` once and uses that array for the hash, the expense and the event | `R7: an ads approval cannot be stretched…` | verified FIXED (R8) |
 | R7-B | Medium | The ads approval key was the day alone, so a different campaign matched an earlier approval and was dropped | The key is `ads:day:amount:skus`; the payment guard stays one per day | `R7: a different campaign for the same day…` | verified FIXED (R8) |
-| R8-1 | Medium | README test counts did not match the published logs | Logs regenerated from the release tree (52/52 SQLite, 52/52 PostgreSQL, 6/6 e2e), and the README matches them | none (evidence) | see R9 |
-| R8-2 | Medium | DEPLOY claimed the cockpit stays up after the free database expires | Corrected: the server cannot start without its configured database | none (docs) | see R9 |
-| R8-3 | Low | Review reports contained absolute workstation paths | Rewritten to repository-relative links | none (docs) | see R9 |
-| R8-4 | Low | README and DEPLOY pointed to missing files | `EXECUTION_STATE.md` added; live checks listed under G15 | none (docs) | see R9 |
-| R8-5 | Low | README promised an approve-versus-deny comparison that does not exist | Claim removed; the walkthrough describes the different quote | none (docs) | see R9 |
-| R8-6 | Low | FAILURE-TEST said 8/8 checks; there are nine | Changed to 9/9 | none (docs) | see R9 |
-| R8-7 | Low | `.gitignore` `public/` also ignored `ui/public/favicon.svg` | Anchored to `/public/` and `/data/` | clean-clone build | see R9 |
+| R8-1 | Medium | README test counts did not match the published logs | Logs regenerated from the release tree (52/52 SQLite, 52/52 PostgreSQL, 6/6 e2e), and the README matches them | none (evidence) | verified FIXED (R9) |
+| R8-2 | Medium | DEPLOY claimed the cockpit stays up after the free database expires | Corrected: the server cannot start without its configured database | none (docs) | verified FIXED (R9) |
+| R8-3 | Low | Review reports contained absolute workstation paths | Rewritten to repository-relative links | none (docs) | verified FIXED (R9) |
+| R8-4 | Low | README and DEPLOY pointed to missing files | `EXECUTION_STATE.md` added; live checks listed under G15 | none (docs) | verified FIXED (R9) |
+| R8-5 | Low | README promised an approve-versus-deny comparison that does not exist | Claim removed; the walkthrough describes the different quote | none (docs) | verified FIXED (R9) |
+| R8-6 | Low | FAILURE-TEST said 8/8 checks; there are nine | Changed to 9/9 | none (docs) | verified FIXED (R9) |
+| R8-7 | Low | `.gitignore` `public/` also ignored `ui/public/favicon.svg` | Anchored to `/public/` and `/data/` | clean-clone build | verified FIXED (R9) |
 
 The R6 and R7 tests were each confirmed to fail on the pre-fix code and to pass after the fix.
 
 ## Final state
-See the R9 row above for the last independent verdict. A finding is only marked verified where a later Codex pass said FIXED.
+| ID | Sev | Finding | Fix | Status |
+|---|---|---|---|---|
+| R9-1 | Medium | README and film/README said the film was already attached to the release | Both now say it is pending until the release is published | fixed, not yet re-verified |
+| R9-2 | Low | REVIEW-SUMMARY linked to the R9 report before it was committed | The report is committed with this summary | fixed, not yet re-verified |
+
+R9 is the last Codex pass. Its two findings are wording and link consistency, and they are fixed but have **not** been re-verified by Codex. Every code finding (R1–R7) was verified FIXED by a later pass.
 
 ## Not reviewed by Codex
 PostgreSQL execution, disk durability, live sockets and browser rendering were outside what the read-only reviews ran. These are covered by FIRMHAND's own PostgreSQL suite, durability tests and Playwright runs ([`../evidence/`](../evidence/)).

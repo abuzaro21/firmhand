@@ -8,7 +8,7 @@ _Last updated 2026-11-13. This file records what is actually true, with evidence
 | Repository | `abuzaro21/firmhand`, branch `main` (latest commit: see `git log -1`) |
 | Visibility | private until the owner approves making it public |
 | Running services | none. Locally, `firmhand-test-pg` (Docker, PostgreSQL 16) is used for the PostgreSQL suite only |
-| Last Codex verdict | R8 (`gpt-6.1-sol`, read-only): FAIL on release docs and config, all fixed since. R9 verification: see [reviews/REVIEW-SUMMARY.md](reviews/REVIEW-SUMMARY.md) |
+| Last Codex verdict | R9 (`gpt-6.1-sol`, read-only) on commit `9d9077c`: FAIL on two wording and link items, which are fixed but not re-verified. Every code finding from R1–R7 was verified FIXED by a later pass. See [reviews/REVIEW-SUMMARY.md](reviews/REVIEW-SUMMARY.md) |
 | Tests | typecheck PASS · `npm test` 52/52 SQLite · 52/52 PostgreSQL 16 · e2e 6/6 (desktop and mobile Chromium) · `npm audit` 0 vulnerabilities |
 | Deployment | **not deployed.** Needs a dedicated Render workspace, which only the owner can create, and approval to create the two free resources |
 | Live URL | none yet |
@@ -32,7 +32,7 @@ _Last updated 2026-11-13. This file records what is actually true, with evidence
 | G11 Durability | PASS | Tests *restart: a pending approval and a half-finished tick survive a process restart*, R1-1, R1-2, R1-3, R5 recovery |
 | G12 Security | PASS (locally) | [SECURITY.md](SECURITY.md); `test/http.test.ts` (cookie flags, isolation, forged hash, traversal, rate limits); R2 and R8 server review |
 | G13 UI tests on desktop and mobile | PASS | [evidence/test-e2e.txt](evidence/test-e2e.txt), [evidence/screenshots/](evidence/screenshots/) |
-| G14 Release: clean clone, CI-equivalent, audit, Docker | see below | Clean-clone and Docker results are recorded in the Release checks section |
+| G14 Release: clean clone, CI-equivalent, audit, Docker | PASS (local); GitHub Actions blocked by account billing | See the Release checks section |
 | G15 Live deployment verified on the public URL | **BLOCKED (owner)** | No dedicated Render workspace yet. Planned checks once deployed: health and HTTPS, session cookie, agents run, KPI drill-down, approval, inventory shock, crash and recovery, replay, restart persistence, isolation between two sessions, rate limits, no secrets in responses |
 | G16 Film | PASS (machine checks only) | [evidence/film-check.json](evidence/film-check.json), [../film/README.md](../film/README.md). No human has watched or listened to it |
 | G17 Submission ready | PENDING | [SUBMISSION.md](SUBMISSION.md) is ready to paste. It needs the live URL, a public repo, the release with the film, and the YouTube link |
@@ -43,9 +43,9 @@ _Last updated 2026-11-13. This file records what is actually true, with evidence
 | Secret and personal-data scan of tracked files | PASS: no credentials, tokens, e-mail addresses or private paths. The raw Codex logs are gitignored |
 | Dependency audit | PASS: `npm audit`, 0 vulnerabilities |
 | Licences | MIT, Apache-2.0, ISC, BSD-3-Clause and OFL-1.1. MPL-2.0 appears only in `lightningcss`, a build-time dependency that does not ship |
-| Clean clone: `npm ci`, typecheck, build, tests | _filled in after the clean-clone run_ |
-| Docker build and smoke | _filled in after the Docker run_ |
-| GitHub Actions | _filled in after the first push_ |
+| Clean clone of commit `9d9077c`: `npm ci`, typecheck, build, tests | PASS: `npm ci`, typecheck and build all succeed, `npm test` 52/52 on SQLite and 52/52 on PostgreSQL 16 |
+| Docker build and smoke (from `git archive` of `9d9077c`) | PASS: the image builds (329 MB). In the container, `/api/health` returns `{"ok":true}`, the UI and favicon are served, and `/api/session` sets an HttpOnly, Secure, SameSite=Strict cookie. The process runs as `node`, not root |
+| GitHub Actions | **NOT RUN.** Run 43336024239 on `9d9077c`: GitHub did not start the jobs ("recent account payments have failed or your spending limit needs to be increased"). No steps executed. Billing was not changed. Public repositories get free minutes, so CI is re-run after the visibility change |
 
 ## Blockers (owner action)
 1. **Render workspace.** Create a workspace named FIRMHAND in the Render dashboard. The CLI cannot create one, and the active CLI workspace belongs to another project, so it must not be used.

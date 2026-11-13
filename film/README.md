@@ -2,7 +2,7 @@
 
 An 89.5-second film of the running product: 1920×1080, 30 fps, H.264 video with AAC stereo audio, English narration, burned-in captions and a soft caption track. It ends on the animated FIRMHAND logo.
 
-- **Final file:** `firmhand-film.mp4`. It is attached to the [v1.0.0 release](https://github.com/abuzaro21/firmhand/releases/tag/v1.0.0) and is not committed to Git.
+- **Final file:** `firmhand-film.mp4`. It is not committed to Git. It will be attached to the v1.0.0 release when that is published (pending).
 - **Captions:** [`firmhand-film.srt`](firmhand-film.srt)
 - **Contact sheet:** [`contact-sheet.png`](contact-sheet.png)
 - **Automated check report:** [`../docs/evidence/film-check.json`](../docs/evidence/film-check.json)

@@ -9,7 +9,7 @@ FIRMHAND is a working slice of a small company run by three independent agents: 
 The company, **Hearthbrew Coffee Gear**, is fictional. Every customer, supplier, order and amount is synthetic. FIRMHAND processes no real payments and contacts no one.
 
 - **Live demo:** see [`docs/DEPLOY.md`](docs/DEPLOY.md) and [`docs/EXECUTION_STATE.md`](docs/EXECUTION_STATE.md) for the current URL. It runs on a free host that sleeps, so the first request can take about a minute.
-- **Film (about 90 s):** attached to the [v1.0.0 release](https://github.com/abuzaro21/firmhand/releases/tag/v1.0.0). The storyboard and checks are in [`film/`](film/README.md).
+- **Film (about 90 s):** to be attached to the v1.0.0 release when it is published (pending; see [`docs/EXECUTION_STATE.md`](docs/EXECUTION_STATE.md)). The storyboard and checks are in [`film/`](film/README.md).
 - **Thesis:** [`docs/THESIS.md`](docs/THESIS.md)
 
 ## How it works

@@ -12,3 +12,4 @@ Taken from the header that the Codex CLI prints at the start of each run. The ra
 | R6-fix-verification-2 | v0.166.0 | `gpt-6.1-sol` | read-only | never | high | `01a1d22c-11e6-7eb1-971a-ab9714fb093b` | 93,050 |
 | R7-fix-verification-3 | v0.166.0 | `gpt-6.1-sol` | read-only | never | high | `01a1d238-3a71-7f51-820a-90365a1c337d` | 66,360 |
 | R8-release-review | v0.166.0 | `gpt-6.1-sol` | read-only | never | high | `01a1d23d-5e7f-7573-8e3c-fa6060d61b3c` | 153,941 |
+| R9-final-verification | v0.166.0 | `gpt-6.1-sol` | read-only | never | high | `01a1d245-599b-7a71-9b09-9a97fb4c0722` | 115,450 |
