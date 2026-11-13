@@ -1,0 +1,11 @@
+[
+  { "id": "title", "text": "This is FIRMHAND. A small company run by three agents, one shared ledger, and you." },
+  { "id": "agents", "text": "Sales quotes customers. Operations moves stock. Finance posts every cent. Each has its own inbox, its own rules and its own permissions, and they only meet in the shared records." },
+  { "id": "approval", "text": "On day two, a café asks for eighteen percent off. Sales may give ten. So the run stops, and the request waits for me, bound to its exact terms by a hash." },
+  { "id": "shock", "text": "Day three. Grinder demand quadruples and the supplier slips. Nobody asks me. Operations sizes an expedite, Finance funds it inside budget, and Sales re-promises dates to the customers who are waiting." },
+  { "id": "crash", "text": "Day five. Operations crashes mid-turn, and it does not announce it. Finance notices because work stopped moving, freezes spending, and asks me before anything restarts." },
+  { "id": "recover", "text": "After the restart, Operations finishes its half-packed parcels exactly once, then catches up." },
+  { "id": "kpi", "text": "Every number opens the records behind it. Revenue is posted on dispatch, never on booking." },
+  { "id": "proof", "text": "Any day replays from the event log alone, with no side effects. And against a naive company with the same seed, it keeps every customer." },
+  { "id": "end", "text": "FIRMHAND. One company. One shared truth." }
+]

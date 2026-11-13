@@ -1,0 +1,77 @@
+{
+  "file": "film/out/firmhand-film.mp4",
+  "ok": true,
+  "checks": {
+    "duration": {
+      "value": 89.47,
+      "ok": true
+    },
+    "resolution": {
+      "value": "1920x1080",
+      "ok": true
+    },
+    "fps": {
+      "value": 30,
+      "ok": true
+    },
+    "frames": {
+      "value": 2684,
+      "ok": true
+    },
+    "codecs": {
+      "value": "h264/yuv420p + aac 48000Hz 2ch + mov_text",
+      "ok": true
+    },
+    "blackFrames": {
+      "value": [],
+      "ok": true
+    },
+    "audioClipping": {
+      "value": {
+        "samplePeakDb": -4.339389,
+        "truePeakDbtp": -4.3
+      },
+      "ok": true
+    },
+    "loudness": {
+      "value": -16.9,
+      "ok": true
+    },
+    "captions": {
+      "value": {
+        "cues": 24,
+        "lastEnd": 83.35,
+        "inSilence": []
+      },
+      "ok": true
+    },
+    "captionsBurnedIn": {
+      "value": {
+        "sampledCues": 6,
+        "pctPixelsChangedInCaptionArea": [
+          5.7,
+          7.5,
+          29.21,
+          39.78,
+          30.87,
+          27.62
+        ]
+      },
+      "ok": true
+    },
+    "endingLogoVisible": {
+      "value": {
+        "meanAbsDiffVsLogoMaster": 0.19
+      },
+      "ok": true
+    },
+    "endingStable": {
+      "value": {
+        "meanAbsDiffLast2s": 0.05,
+        "lastFrameLuma": 25.8
+      },
+      "ok": true
+    }
+  },
+  "note": "Automated checks only; no human listening or viewing review is claimed."
+}

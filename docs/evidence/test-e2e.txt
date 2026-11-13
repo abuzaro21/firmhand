@@ -1,0 +1,11 @@
+
+Running 6 tests using 1 worker
+
+  ok 1 [desktop] › e2e\cockpit.spec.ts:20:1 › operator runs the week, answers the inbox, and the record verifies (8.9s)
+  ok 2 [desktop] › e2e\cockpit.spec.ts:67:1 › watch mode narrates from the event log (1.7s)
+  ok 3 [desktop] › e2e\cockpit.spec.ts:77:1 › a forged approval hash is refused by the server even if the browser is tampered with (5.0s)
+  ok 4 [mobile] › e2e\cockpit.spec.ts:20:1 › operator runs the week, answers the inbox, and the record verifies (6.0s)
+  ok 5 [mobile] › e2e\cockpit.spec.ts:67:1 › watch mode narrates from the event log (1.1s)
+  ok 6 [mobile] › e2e\cockpit.spec.ts:77:1 › a forged approval hash is refused by the server even if the browser is tampered with (1.4s)
+
+  6 passed (25.8s)

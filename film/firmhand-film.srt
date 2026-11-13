@@ -1,0 +1,104 @@
+1
+00:00:00,300 --> 00:00:01,373
+This is FIRMHAND.
+
+2
+00:00:01,423 --> 00:00:05,600
+A small company run by three agents,
+one shared ledger, and you.
+
+3
+00:00:06,350 --> 00:00:07,880
+Sales quotes customers.
+
+4
+00:00:07,930 --> 00:00:09,461
+Operations moves stock.
+
+5
+00:00:09,511 --> 00:00:11,179
+Finance posts every cent.
+
+6
+00:00:11,229 --> 00:00:18,325
+Each has its own inbox, its own rules and its own
+permissions, and they only meet in the shared records.
+
+7
+00:00:19,075 --> 00:00:22,513
+On day two, a café asks for eighteen percent off.
+
+8
+00:00:22,563 --> 00:00:23,866
+Sales may give ten.
+
+9
+00:00:23,916 --> 00:00:29,775
+So the run stops, and the request waits for me,
+bound to its exact terms by a hash.
+
+10
+00:00:30,525 --> 00:00:31,167
+Day three.
+
+11
+00:00:31,217 --> 00:00:34,556
+Grinder demand quadruples and the supplier slips.
+
+12
+00:00:34,606 --> 00:00:35,593
+Nobody asks me.
+
+13
+00:00:35,643 --> 00:00:44,100
+Operations sizes an expedite, Finance funds it inside budget, and
+Sales re-promises dates to the customers who are waiting.
+
+14
+00:00:44,850 --> 00:00:45,403
+Day five.
+
+15
+00:00:45,453 --> 00:00:49,223
+Operations crashes mid-turn, and it
+does not announce it.
+
+16
+00:00:49,273 --> 00:00:55,925
+Finance notices because work stopped moving, freezes
+spending, and asks me before anything restarts.
+
+17
+00:00:56,675 --> 00:01:02,900
+After the restart, Operations finishes its
+half-packed parcels exactly once, then catches up.
+
+18
+00:01:03,650 --> 00:01:06,456
+Every number opens the records behind it.
+
+19
+00:01:06,506 --> 00:01:09,800
+Revenue is posted on dispatch, never on booking.
+
+20
+00:01:10,550 --> 00:01:14,677
+Any day replays from the event log
+alone, with no side effects.
+
+21
+00:01:14,727 --> 00:01:19,450
+And against a naive company with the same
+seed, it keeps every customer.
+
+22
+00:01:20,200 --> 00:01:20,908
+FIRMHAND.
+
+23
+00:01:20,958 --> 00:01:21,918
+One company.
+
+24
+00:01:21,968 --> 00:01:23,350
+One shared truth.

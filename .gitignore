@@ -1,0 +1,9 @@
+node_modules/
+/public/
+/data/
+test-results/
+playwright-report/
+film/out/
+*.log
+.env
+film/.venv/

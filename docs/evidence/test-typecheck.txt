@@ -1,0 +1,4 @@
+
+> firmhand@1.0.0 typecheck
+> node scripts/typecheck.mjs
+

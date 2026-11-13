@@ -1,0 +1,12 @@
+You are an independent, adversarial code reviewer for FIRMHAND, a public challenge entry: a TypeScript (Node 24 native type stripping) company simulator run by three deterministic agents (Sales, Operations, Finance) over one shared record system (SQLite or PostgreSQL 16), with a double-entry journal in integer cents, per-role task inboxes, a hash-bound human approval inbox, and isolated per-visitor companies. There are no runtime LLM calls.
+
+Rules: READ-ONLY. Do not modify, create or delete any file. Do not run network commands. You may read any file under this directory and run read-only commands, including `node --disable-warning=ExperimentalWarning --test test/regressions.test.ts` (in-memory SQLite). Do not read data/ or node_modules/.
+
+Task: an earlier verification (docs/reviews/R5-fix-verification-codex.md) returned FAIL with four PARTIAL findings (R1-3, R2-2, R2-3, R2-4, R3-3) and two new defects (purchase funding stalls after overrides change twice; reset admission keeps a stale slot exemption). They were addressed by:
+- src/agents/continuations.ts (new): rebuild() restores continuations at the start of every Sales and Finance turn from approvals that are pending or whose decision is still queued in the role's inbox; track() acts at once on a duplicate escalation whose approval is already decided, at most once per approval per turn;
+- src/kernel.ts escalate: duplicates now return the approval id (unless executed) and `approvalStatus`;
+- src/agents/finance.ts onApproval: purchase re-evaluation and decline based on the PO's durable status; ads fallback to Finance's own limit when an approved campaign can no longer be used;
+- src/server.ts: the old company is re-resolved inside the admission gate; the replacement is created before the old company is dropped;
+- tests prefixed `R5:` in test/regressions.test.ts.
+
+For each of the six items say FIXED, PARTIAL or NOT FIXED with file:line evidence in one or two lines. Then look hard for NEW defects in these changes: can track()/onApproval recurse or loop, act twice on one approval, act without authority, act on another role's approval, or change behaviour of an uninterrupted run? Can rebuild() resurrect an approval already handled? Is anything nondeterministic? For each new defect: severity, file:line, concrete scenario, minimal fix. No style comments. End with a one-line overall verdict (PASS or FAIL). At most 700 words.

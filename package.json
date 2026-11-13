@@ -1,0 +1,33 @@
+{
+  "name": "firmhand",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FIRMHAND: a fictional company run by three accountable agents (Sales, Operations, Finance) over one shared, double-entry, event-logged record system, with a human approval inbox, self-correction, failure handling and day replay.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=24.13.0 <25" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/main.ts",
+    "dev:ui": "vite",
+    "build": "vite build",
+    "typecheck": "node scripts/typecheck.mjs",
+    "test": "node --disable-warning=ExperimentalWarning --test --test-concurrency=1 \"test/**/*.test.ts\"",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": { "pg": "8.23.1" },
+  "devDependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource-variable/jetbrains-mono": "5.3.0",
+    "@fontsource-variable/fraunces": "5.3.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "typescript": "5.9.3",
+    "vite": "8.3.4"
+  }
+}

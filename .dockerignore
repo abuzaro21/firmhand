@@ -1,0 +1,14 @@
+node_modules
+public
+data
+film
+docs
+e2e
+test
+test-results
+playwright-report
+scripts
+.git
+.github
+*.log
+.env

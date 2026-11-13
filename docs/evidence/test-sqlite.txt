@@ -1,0 +1,66 @@
+
+> firmhand@1.0.0 test
+> node --disable-warning=ExperimentalWarning --test --test-concurrency=1 "test/**/*.test.ts"
+
+✔ concurrent reservations for the last units: exactly one wins, stock never goes negative (30.2133ms)
+✔ duplicate payment: a retried capture and a re-delivered OrderPlaced never charge twice (28.9284ms)
+✔ role violation: Sales cannot capture money and Operations cannot post journal entries (7.4852ms)
+✔ a paused or faulted agent cannot act, even if called directly (50.7929ms)
+✔ negative stock is impossible: packing more than is on the shelf is refused by the kernel and the schema (7.4852ms)
+✔ overdraft is impossible: the ledger refuses any posting that takes cash below zero (8.8734ms)
+✔ refunds and credits can never exceed what the customer paid (6.8379ms)
+✔ margin guard: discounts above the hard limit are refused; above the auto limit they wait for a human (4.115ms)
+✔ approval binding: tampered params, reuse, wrong company, wrong role, expiry and stale state all fail (10.6568ms)
+✔ an approval cannot be decided after it expires (34.3408ms)
+✔ restart: a pending approval and a half-finished tick survive a process restart and resume exactly once (456.3438ms)
+✔ operations crash mid-turn: detection, compensation, human-approved recovery, exactly-once dispatch (853.6069ms)
+✔ day replay is read-only: zero side effects, and it reproduces the closing snapshot (1015.2863ms)
+✔ self-correction needs no human: the inventory shock is handled with zero approvals and a bounded budget (584.5208ms)
+✔ isolation: one company never sees or changes another company (192.467ms)
+✔ a session cookie is HttpOnly and SameSite=Strict, with strict security headers (31.377ms)
+✔ visitors are isolated; a forged or missing cookie gets nothing (276.5629ms)
+✔ there is no way to write an event, a record, an actor or a clock from the browser (26.8835ms)
+✔ approvals are enforced by the backend: the shown hash is required and must match (144.2133ms)
+✔ replay over HTTP reports zero side effects and verifies the close (228.9981ms)
+✔ operator controls: pause, resume, inject, KPI drill-down, comparison (1784.6985ms)
+✔ static serving refuses traversal and serves the SPA fallback (7.7514ms)
+✔ rate limits: new companies per address and simulated hours per minute are bounded (210.4783ms)
+✔ R1-1/R3-1: a kill after the world phase commits but before its checkpoint cannot freeze the company (50.1206ms)
+✔ R1-2/R3-2: a parcel packed by a turn that died is dispatched by the next running Operations turn (10.854ms)
+✔ R1-3/R3-3: an escalation that committed before a crash keeps its continuation (157.2312ms)
+✔ R2-2: an approval that expires before use falls back to what Sales may do alone (191.1328ms)
+✔ R1-4: a dispatched parcel whose posting is refused is retried until it is posted (18.5717ms)
+✔ R1-5: cancelling an order whose deposit was fully credited settles the deposit with no cash movement (5.3414ms)
+✔ R2-1: an approval to exceed the purchase limit does not also authorise breaching the reserve (4.3904ms)
+✔ R3-4: promises against inbound stock respect the orders already waiting for it (6.7151ms)
+✔ R4-2/R4-5: every KPI drawer returns exactly the records its tile counts (855.2695ms)
+✔ R2-3: concurrent session requests cannot exceed the company cap (46.0556ms)
+✔ R2-4: a rate-limited reset keeps the visitor's existing company (18.6831ms)
+✔ R4-1: verification never reports a false mismatch while ticks run concurrently (183.5185ms)
+✔ R5: a discount denied before the crashed request is redelivered still gets an answer (131.3171ms)
+✔ R5: a recovery request whose continuation was lost still restarts Operations once approved (628.9857ms)
+✔ R5: an approved campaign that expires before use runs at Finance's own limit (92.2579ms)
+✔ R5: when the needed overrides change twice, a matching approval already granted is used (38.564ms)
+✔ R5: concurrent resets sharing one cookie cannot exceed the company cap (31.4963ms)
+[firmhand] POST /api/reset failed: Error: simulated creation failure
+✔ R5: if creating the replacement fails, a reset leaves the visitor's company intact (12.6972ms)
+✔ R6: a campaign continuation rebuilt after a crash advertises exactly the approved products (25.2341ms)
+✔ R7: an ads approval cannot be stretched to advertise a product the human did not approve (3.6501ms)
+✔ R7: a different campaign for the same day files its own approval instead of matching an earlier one (3.6181ms)
+[firmhand] POST /api/reset failed: Error: simulated deletion failure
+✔ R6: if deleting the old company fails, a reset leaves one company and no capacity is lost (19.1104ms)
+✔ seed 7: a full week closes 7 days, reconciles every day, and replays exactly (1003.093ms)
+✔ seed 11: a full week closes 7 days, reconciles every day, and replays exactly (912.9482ms)
+✔ seed 23: a full week closes 7 days, reconciles every day, and replays exactly (780.4511ms)
+✔ seed 42: a full week closes 7 days, reconciles every day, and replays exactly (923.6798ms)
+✔ seed 101: a full week closes 7 days, reconciles every day, and replays exactly (922.8985ms)
+✔ the same seed produces the same business, independent of company identity (2614.4874ms)
+✔ the week cannot run past day 7 (958.0463ms)
+ℹ tests 52
+ℹ suites 0
+ℹ pass 52
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 17455.2296
